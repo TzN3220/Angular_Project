@@ -1,0 +1,19 @@
+{{volunteerForm.value|json}}
+<div class="card" *ngIf="vfrom">
+    <div class="card-header">
+        {{vfrom.id}}: {{vfrom.first_name}}
+    </div>
+    <div class="card-body">
+<form [formGroup]="volunteerForm">
+     <div [formGroup]="volunteerForm">
+    name:<input type="text" formControlName="id" name="id" ><br>
+    first_name:<input type="text" formControlName="first_name" name="first_name" ><br>
+    last_name:<input type="text" formControlName="last_name" name="last_name" ><br> 
+    <input formControlName="Sunday" type="checkbox" name="days_work" id="Sunday" /> sunday
+    <input formControlName="Monday" type="checkbox" name="days_work" id="Monday" /> monday
+    <input formControlName="Tuesday" type="checkbox" name="days_work" id="Thursday"/>thusday
+    <input formControlName="Wednesday" type="checkbox" name="days_work" id="Wednesday" />whenthday
+    <input formControlName="Thursday" type="checkbox" name="days_work" id="Thursday"/>sateday
+</div>
+</form>
+<button (click)="saveStudentServer()">send</button>

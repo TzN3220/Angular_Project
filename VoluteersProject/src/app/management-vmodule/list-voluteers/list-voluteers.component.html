@@ -1,0 +1,10 @@
+<ul class="list-group">  
+    <li  *ngFor="let voluteer of listVolunteers" class="list-group-item">
+        <div class="row">
+            <div class="col-1">{{voluteer.id}}</div>
+            <div class="col-3">{{voluteer.first_name}} {{voluteer.last_name}}</div>
+             <button (click)="editingvoluteer(voluteer)" class="btn btn-primary">מתנדב</button>
+        </div>
+    </li>  
+ </ul> 
+

@@ -1,0 +1,24 @@
+ <p>schedulind-volunteers works!</p> 
+ <form [formGroup]="schedulingForm" >
+<table  class="table table-sm" *ngIf="flag">
+    <thead>
+        <tr>
+        <th *ngFor="let day of days;let i=index" scope="col-4">
+        <p>{{days[i]}}</p>
+        </th>
+        </tr> 
+    </thead>
+    <tbody>
+        <tr>
+             <td *ngFor="let day of volunteers.controls;let i=index">
+                <div formArrayName="volunteers">
+                <select  name="" id="" [formControlName]="i" class="form-select" [ngClass]="{'selected':day.value>0}">
+                    <option *ngFor="let v of this.volunteerdays(i)" [ngValue]="v.id" >{{v.first_name}}</option>
+                </select></div>
+            </td> 
+        </tr>
+    </tbody>
+</table> 
+    <button (click)="sendToServer()">שמירה</button>
+</form>
+ 
