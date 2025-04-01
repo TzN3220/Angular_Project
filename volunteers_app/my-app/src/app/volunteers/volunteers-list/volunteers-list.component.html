@@ -1,0 +1,22 @@
+<p>volunteers-list works!</p>
+<ul class="list-group">
+    <li *ngFor="let volunteer of allVolunteers" class="list-group-item"
+        [ngClass]="{'list-group-item-success':volunteer.isActive, 'list-group-item-danger':!volunteer.isActive}"
+        (click)="routeToEdit(volunteer.id)">
+        <div class="row">
+            <div class="col-3">
+                {{volunteer.name}}
+                                                      
+            </div>
+            <div class="col-2">
+                {{volunteer.tel}}
+            </div>
+            <div class="col-4">
+                {{volunteer.address}}
+            </div>
+            <div *ngIf="volunteer.isActive==false">
+                not active
+            </div>
+        </div>
+    </li>
+</ul>
